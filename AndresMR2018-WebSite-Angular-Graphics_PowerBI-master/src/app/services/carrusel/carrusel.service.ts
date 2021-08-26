@@ -7,7 +7,7 @@ import { Carrusel } from 'src/app/Modelos/Carrusel';
   providedIn: 'root'
 })
 export class CarruselService {
-  urlCarrusel="http://localhost:9090/carrusel"
+  urlCarrusel="https://innovabackend.herokuapp.com/carrusel"
   constructor(private httpClient:HttpClient) { }
 
   getCarrusel(){

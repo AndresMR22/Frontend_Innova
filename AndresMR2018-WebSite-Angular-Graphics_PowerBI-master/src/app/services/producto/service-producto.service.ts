@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceProductoService {
-urlProducto = "http://localhost:9090/producto"
+urlProducto = "https://innovabackend.herokuapp.com/producto"
   constructor(private httpClient:HttpClient) { }
 
   getProductos(){

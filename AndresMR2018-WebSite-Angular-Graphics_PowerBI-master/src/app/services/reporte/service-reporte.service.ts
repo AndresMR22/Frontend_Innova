@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ServiceReporteService {
 
-  urlReporte="http://localhost:9090/reporte"
+  urlReporte="https://innovabackend.herokuapp.com/reporte"
 
   constructor(private httpClient: HttpClient) { }
 

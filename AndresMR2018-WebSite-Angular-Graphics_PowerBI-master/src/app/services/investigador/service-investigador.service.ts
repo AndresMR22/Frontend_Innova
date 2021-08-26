@@ -8,7 +8,7 @@ import { Investigador } from 'src/app/Modelos/Investigador';
   providedIn: 'root'
 })
 export class ServiceInvestigadorService {
-urlInvestigador = 'http://localhost:9090/investigador';
+urlInvestigador = 'https://innovabackend.herokuapp.com/investigador';
   constructor(private httpClient: HttpClient) { }
 
 

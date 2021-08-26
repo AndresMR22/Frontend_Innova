@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceContactoService {
-urlContacto = 'http://localhost:9090/contacto';
+urlContacto = 'https://innovabackend.herokuapp.com/contacto';
 
 constructor(private httpClient: HttpClient) { }
 

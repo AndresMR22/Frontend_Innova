@@ -9,7 +9,7 @@ import { IPalabraClave } from 'src/app/Modelos/PalabraClave';
 })
 export class PalabraserviceService {
 
-  urlPalabraClave="http://localhost:9090/palabraclave"
+  urlPalabraClave="https://innovabackend.herokuapp.com/palabraclave"
   constructor(private httpClient:HttpClient) { }
 
   getPalabrasClave(){

@@ -11,7 +11,7 @@ import { IpcNetConnectOpts } from 'net';
 
 export class ServiceProyectoService {
 
-  urlProyectos = 'http://localhost:9090/proyecto';
+  urlProyectos = 'https://innovabackend.herokuapp.com/proyecto';
   constructor(private httpClient: HttpClient) { }
 
   getProyectos(){

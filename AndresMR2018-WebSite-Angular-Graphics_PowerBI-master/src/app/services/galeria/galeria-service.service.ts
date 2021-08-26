@@ -8,7 +8,7 @@ import { Galeria } from 'src/app/Modelos/Galeria';
 })
 export class GaleriaServiceService {
 
-  urlGaleria = "http://localhost:9090/galeria"
+  urlGaleria = "https://innovabackend.herokuapp.com/galeria"
   constructor(private httpClient:HttpClient) { }
 
   getGaleria(){

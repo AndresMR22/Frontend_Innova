@@ -8,7 +8,7 @@ import { Publicacion } from 'src/app/Modelos/Publicacion';
   providedIn: 'root'
 })
 export class ServicePublicacionService {
-urlPublicacion = 'http://localhost:9090/publicacion';
+urlPublicacion = 'https://innovabackend.herokuapp.com/publicacion';
   constructor(private httpClient: HttpClient) { }
 
 

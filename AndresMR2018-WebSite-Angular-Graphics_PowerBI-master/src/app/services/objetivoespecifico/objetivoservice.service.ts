@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ObjetivoserviceService {
 
-  urlObjetivo = 'http://localhost:9090/objetivoespecifico';
+  urlObjetivo = 'https://innovabackend.herokuapp.com/objetivoespecifico';
   constructor(private httpClient: HttpClient) { }
 
   getObjetivos(){

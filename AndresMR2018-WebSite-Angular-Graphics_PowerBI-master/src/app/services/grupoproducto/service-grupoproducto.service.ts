@@ -11,8 +11,8 @@ export class ServiceGrupoproductoService {
 
   constructor(private httpClient:HttpClient) { }
 
-  urlGrupo = 'http://localhost:9090/grupoproducto';
-urlProductos = 'http://localhost:9090/grupoproducto/grupo/';
+  urlGrupo = 'https://innovabackend.herokuapp.com/grupoproducto';
+urlProductos = 'https://innovabackend.herokuapp.com/grupoproducto/grupo/';
   public getGruposProductos(){
     return this.httpClient.get<IGrupoProducto[]>(this.urlGrupo+"/listar");
   }

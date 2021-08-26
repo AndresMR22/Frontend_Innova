@@ -8,7 +8,7 @@ import { Informacion } from 'src/app/Modelos/Informacion';
 })
 export class InformacionServiceService {
 
-  urlInformacion="http://localhost:9090/informacion"
+  urlInformacion="https://innovabackend.herokuapp.com/informacion"
   constructor(private httpClient:HttpClient) { }
 
 

@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class ServiceEnlaceService {
 
-  urlEnlace = "http://localhost:9090/enlace";
-  urlEnlaceByReporte = "http://localhost:9090/enlace/reporte-enlace"
+  urlEnlace = "https://innovabackend.herokuapp.com/enlace";
+  urlEnlaceByReporte = "https://innovabackend.herokuapp.com/enlace/reporte-enlace"
 
   constructor(private httpClient:HttpClient) { }
 
