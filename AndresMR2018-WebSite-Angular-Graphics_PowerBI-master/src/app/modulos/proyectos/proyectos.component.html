@@ -1,0 +1,70 @@
+
+<body>
+<div class="container-fluid">
+    <div class="header mt-3 text-center">
+      <div class="cabecera">
+        <div class="titulo">Proyectos INNOVA</div>
+      </div>
+       
+    </div>
+        <div class="container-fluid" id="proyectos">
+          <div class="accordion py-5" id="accordionExample">
+              <div class="accordion-item" *ngFor="let proyecto of proyectos">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="titulo accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                   {{proyecto.titulo}}
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                     
+                        <div class="objetivo pb-2">
+                          <p style="font-weight: bold;">Objetivo</p>
+                          {{proyecto.objetivogeneral}}
+                        </div>
+                        <div *ngIf="proyecto.objetivosespecificos?.length != 0">
+                        <p style="font-weight: bold;" >Objetivos específicos</p>
+                       <div *ngFor = "let p of proyecto.objetivosespecificos">
+                       
+<!-- {{pro.nombreobjetivo}} -->
+                     <li class="objetivoespecifico">{{p?.nombreobjetivo}}</li>
+                      </div>
+                    </div>
+                      <br>
+                      <div class="resumen">
+                        <p style="font-weight: bold;">Resumen:{{proyecto.resumen}} </p>
+                      </div>
+                      <div *ngIf="proyecto.palabrasclave?.length !=0">
+                        <p style="font-weight: bold;">Palabras clave</p>
+                      <div *ngFor="let pc of proyecto.palabrasclave">
+                      <li class="palabraclave"> {{pc?.palabraClave}}</li>
+                      </div>
+                    </div>
+                       <div class="autor">
+                         <p style="font-weight: bold;">Autor: {{proyecto.autor}} </p>
+                       </div>
+                       <div class="fechaPublicacion">
+                        <p style="font-weight: bold;">Fecha de publicacion:{{proyecto.fecha}}</p>
+                      </div>
+                     </div>
+              </div>
+              
+
+             
+        </div>
+        </div>
+        </div>
+
+    
+
+<div class="btn-up" id="button-up">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+
+<div class="marcaEspoch">
+  <img src="../../../assets/img/marcaEspoch.png">
+</div>
+
+</div>
+</body>

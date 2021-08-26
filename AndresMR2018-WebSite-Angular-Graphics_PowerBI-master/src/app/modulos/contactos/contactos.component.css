@@ -1,0 +1,91 @@
+body{
+    margin-left: 55px;
+    margin-right: 55px;
+}
+
+/* .container{
+    margin-left: 40px;
+    margin-right: 40px;
+} */
+
+.header{
+    height: 100px;
+    background: #e9ecef;
+}
+
+.header .titulo{
+    padding-top:30px;
+}
+
+.cabecera .titulo{
+    font-size:32px;
+    font-weight: 500;
+    text-align: initial;
+    border-bottom: solid 10px;
+    border-image: url(../../../assets/img/barra-degradado-autoridades.png) 0 0 10;
+    border-image: url(../../../assets/img/barra-degradado-autoridades.png) 0 0 10;
+    border-image: url(../../../assets/img/barra-degradado-autoridades.png) 0 0 10;
+    border-image-repeat: stretch;
+}
+
+.container-fluid{
+    background: #e9ecef;
+    flex-flow: row wrap;
+    padding-bottom: 30px;
+}
+
+.accordion-button{
+    font-weight: bold;
+}
+
+.row{
+    padding-bottom: 50px;
+}
+
+
+article img{
+    max-width: 50%;
+}
+
+article{
+    text-align: center;
+    padding-top:50px;
+}
+
+article #contacto{
+    font-size: 16px;
+    padding-top:40px;
+    text-align:center;
+    font-weight: bolder;
+    text-align: initial;
+}
+article a{
+    text-decoration: none;
+}
+
+article img{
+    vertical-align: middle;
+    border-radius: 100%;
+}
+.marcaEspoch{
+    text-align: center;
+   }
+   
+   
+   .marcaEspoch img{
+       vertical-align: middle;
+   }
+   
+
+   @media screen and (max-width:520px){
+    body{
+       margin-left:0;
+       margin-right: 0;
+    }
+}
+
+@media screen and (max-width:900px){
+    article #contacto{
+        text-align: center;
+    }
+}

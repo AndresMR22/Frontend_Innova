@@ -1,0 +1,199 @@
+body{
+    margin-left: 55px;
+    margin-right: 55px;
+}
+
+.header{
+    height: 100px;
+    background: #e9ecef;
+}
+
+.cabecera .titulo, .tituloGaleria{
+    padding-left: 10px;
+    font-size:32px;
+    font-weight: 500;
+    text-align: initial;
+    border-bottom: solid 10px;
+    border-image: url(../../../assets/img/barra-degradado-autoridades.png) 0 0 10;
+    border-image: url(../../../assets/img/barra-degradado-autoridades.png) 0 0 10;
+    border-image: url(../../../assets/img/barra-degradado-autoridades.png) 0 0 10;
+    border-image-repeat: stretch;
+}
+
+.header .titulo{
+    padding-top:30px;
+}
+
+.container{
+    max-width: 1220px;
+    background: #e9ecef;
+/* Damos la propiedad flex al contenedor */
+  display: flex;
+  flex-wrap:wrap;
+  /* Centramos los elementos en el eje y  */
+  align-items:center;
+  /* Ajustamos el texto con tipo centrado */
+   justify-content:center;
+    padding-bottom: 30px;
+}
+
+.container-fluid{
+    background: #e9ecef;
+}
+
+.informacion{
+   /* background: green; */
+    flex: 3;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: justify;
+    margin-right:20px;
+}
+.logo{
+    /* background: tomato; */
+    flex:1 0 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.logo img{
+    max-width:100%;
+}
+
+.galeria{
+    background: #e9ecef;
+}
+
+.galeria .foto{
+    margin:20px;
+}
+.galeria .foto img{
+    max-width: 100%;
+}
+
+/* .tituloGaleria{
+    text-align: initial;
+    border-bottom: solid 10px;
+    border-image: url(../../../assets/img/barra-degradado-autoridades.png) 0 0 10;
+    border-image: url(../../../assets/img/barra-degradado-autoridades.png) 0 0 10;
+    border-image: url(../../../assets/img/barra-degradado-autoridades.png) 0 0 10;
+    border-image-repeat: stretch;
+} */
+
+
+
+/* .galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} */
+
+
+
+@media screen and (min-width:480px) {
+    .galeria{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .galeria .foto {
+        flex: 0 1 calc(50% - 1rem);
+        
+    }
+    .galeria .foto img{
+        vertical-align: middle;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .galeria .foto {
+        flex: 0 1 calc(25% - 1rem);
+    }
+}
+
+
+
+@media screen and (max-width:750px){
+    
+.logo{
+    flex:0 1 750px;
+    text-align: center!important;
+    
+}
+.logo .foto img{
+    
+    max-width: 10%!important;
+    vertical-align: middle!important;
+}
+}
+
+.contenedorGaleria{
+    display: flex;
+
+}
+
+
+.marcaEspoch{
+    text-align: center;
+   }
+   
+   
+   .marcaEspoch img{
+       vertical-align: middle;
+   }
+   
+
+
+
+   #button-up{
+       z-index: 6;
+    width:60px;
+    height: 60px;
+    background:#65B420;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    color:white;
+    border-radius:50%;
+    font-size: 20px;
+    position: fixed;
+    bottom:60px;
+    right:60px;
+    cursor:pointer;
+    border:4px solid transparent;
+    transition: all 300ms ease;
+    transform:scale(0);
+}
+
+
+#button-up:hover{
+    transform: scale(1.1);
+    border-color:rgba(0,0,0,0.1);
+}
+
+
+
+
+   @media screen and (max-width:520px){
+    body{
+       margin-left:0;
+       margin-right: 0;
+    }
+}
+
+
+@media screen and (max-width:720px){
+
+    #button-up{
+     right: calc(46%);
+    }
+
+}
+
+@media screen and (max-width:480px){
+
+    #button-up{
+     right: calc(43%);
+    }
+
+}

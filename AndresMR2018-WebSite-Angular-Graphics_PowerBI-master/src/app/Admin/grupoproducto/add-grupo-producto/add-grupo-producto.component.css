@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container{
+    text-align: center;
+    width: 100%;
+}
+
+form{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form .form-group{
+    width: 100%;
+    display:flex;
+   
+}
+
+.form-group .form-control{
+    text-align: center;
+}
+
+.imagenSeleccionada{
+    max-width: 30%;
+}
+
+
+@media screen and (max-width:440px){
+    .container{
+        max-width: 320px;
+    }
+
+    h3{
+        font-size: 14px;
+    }
+
+    form{
+        font-size: 12px;
+    }
+
+
+}

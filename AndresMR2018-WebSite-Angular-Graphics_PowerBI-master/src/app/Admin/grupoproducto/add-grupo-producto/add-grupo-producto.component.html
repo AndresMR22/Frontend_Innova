@@ -1,0 +1,27 @@
+<body>
+    
+    <div class="container mx-5 my-5" >
+        <h3>Agregar grupo para productos</h3>
+        <form (submit)="addGrupo($event)">
+          <div class="form-group">
+              <input type="text" [(ngModel)]="nombregrupo" name="nombregrupo" class="form-control" placeholder="Ingresar nombre de grupo">
+            </div>
+            <div class="form-group">
+              <input type="text" [(ngModel)]="titulo" name="titulo" class="form-control" placeholder="Ingresar título">
+            </div>
+            <div class="form-group md-12">
+              <input #inputFoto type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)"/>
+              <img class="imagenSeleccionada" src={{fotogrupo}}>
+            </div>
+            <div class="form-group">
+              <input type="text" [(ngModel)]="descripcion" name="descripcion" class="form-control" placeholder="Ingresar descripción">
+            </div>
+              <span class="input-group-addon">
+                  <button type="submit" class="btn btn-primary">
+                      Guardar
+                    </button>
+              </span>
+          
+          </form>
+</div>
+</body>

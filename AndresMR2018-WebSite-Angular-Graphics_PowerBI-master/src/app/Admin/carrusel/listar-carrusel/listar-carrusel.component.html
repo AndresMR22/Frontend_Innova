@@ -1,0 +1,97 @@
+
+<body>
+    <div class="container-fluid">
+        <div class="header w-100 mt-3 text-center">
+          <div class="cabecera">
+            <div class="titulo">Carrusel</div>
+          </div>
+        </div>
+        <div class="botones">
+          <button class="btn btn-success my-3"><a routerLink="../agregar-carrusel">Agregar imagen al carrusel</a></button>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                  <tr> 
+                  <th scope="col">C#</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Foto del carrusel</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody> 
+                  <tr *ngFor="let c of carruseles; let i = index"> 
+                   <td>{{i+1}}</td>
+                   <td colspan><a class="btn btn-secondary" (click)="triggerModal(modalData2)" (click)="showDescripcion(c)"><i class="fa fa-eye"></i></a></td>
+                    <td colspan><img src="{{c.foto}}"></td>
+                    <td>
+                        <a class="btn btn-warning col-sm-9 my-1" (click)="triggerModal(modalData)" (click)="showImagen(c)" ><i class="fa fa-edit"></i></a>
+                        <br>
+                        <a class="btn btn-danger col-sm-9" (click)="borrar(c)" ><i class="fa fa-trash"></i></a>
+                       
+                    </td>
+                  </tr>    
+                </tbody>
+              </table>
+       
+          
+        </div>
+    
+      
+    </div>
+
+    
+<ng-template #modalData let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Editar carrusel</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+ <form #grupoForm="ngForm" >
+     <div class="form-group">
+         <label for="my-input">Descripción de imagen</label>
+         <input id="my-input" [(ngModel)]="carruselSelected.descripcion" class="form-control" type="text" name="descripcion">
+     </div>
+     <div class="form-group">
+        <label for="my-input">Imagen del carrusel</label>
+        <img name="fotoproducto" src="{{fotoCarrusel.foto}}">
+        <input id="my-input"  class="form-control" type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)" [(ngModel)]="carruselSelected.foto" name="foto">
+    </div>
+
+ </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success"(click)="modificarCarrusel(carruselSelected)" (click)="modal.close('Save click')">Guardar</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cancelar</button>
+</div>
+</ng-template>
+
+
+<ng-template #modalData2 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title2">Descripción o frase de imagen del carrusel</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #grupoForm="ngForm" >
+      <div class="form-group">
+          <label for="my-input"></label>
+          <img name="fotogrupo" src="{{carruselSelected.descripcion}}"> 
+        </div>
+  </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
+</div>
+</ng-template>
+    
+    <div class="btn-up" id="button-up">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    
+    </body>

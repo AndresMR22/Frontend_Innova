@@ -1,0 +1,72 @@
+<body>
+    <div class="container-fluid">
+        <div class="header w-100 mt-3 text-center">
+          <div class="cabecera">
+            <div class="titulo">Enlaces del sistema</div>
+          </div>
+        </div>
+        <div class="botones">
+          <button class="btn btn-success my-3"><a routerLink="../agregar-enlace">Agregar enlace</a></button>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                  <tr> 
+                  <th scope="col">E#</th>
+                    <th scope="col">Título de enlace</th>
+                    <th scope="col">Enlace o link de la gráfica</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody> 
+                  <tr *ngFor="let enlace of enlaces; let i = index"> 
+                   <td>{{i+1}}</td>
+                    <td colspan>{{enlace.nombreenlace}}</td>
+                    <td colspan class="enlace">{{enlace.enlace}}</td>
+                    <td>
+                        <a class="btn btn-warning col-sm-9 my-1" (click)="triggerModal(modalData)" (click)="showEnlace(enlace)" ><i class="fa fa-edit"></i></a>
+                        <br>
+                        <a class="btn btn-danger col-sm-9" (click)="borrar(enlace)" ><i class="fa fa-trash"></i></a>
+                       
+                    </td>
+                  </tr>    
+                </tbody>
+              </table>
+        </div>
+    </div>
+    
+     
+    <ng-template #modalData let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Editar enlace</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+       <form #grupoForm="ngForm" >
+           <div class="form-group">
+               <label for="my-input">Título de enlace</label>
+               <input id="my-input" [(ngModel)]="enlaceSelected.nombreenlace" class="form-control" type="text" name="nombreenlace">
+           </div>
+           <div class="form-group">
+            <label for="my-input">Enlace</label>
+            <input id="my-input" [(ngModel)]="enlaceSelected.enlace" class="form-control" type="text" name="enlace">
+        </div>
+        <div class="form-group">
+          <label for="my-input">Seleccione el reporte al que pertenece el enlace</label>
+                    <select  name="idreporte"  [ngModel]="idreporte"  (ngModelChange)="GrupoID($event)" class="custom-select">
+                        <option *ngFor="let rep of reportes" [value]=rep.idreporte>{{rep.nombrereporte}}</option>
+                      </select>
+        </div>
+
+         
+       </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success"(click)="modificarEnlace(enlaceSelected)" (click)="modal.close('Save click')">Guardar</button>
+          <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cancelar</button>
+      </div>
+      </ng-template>
+    </body>
+    

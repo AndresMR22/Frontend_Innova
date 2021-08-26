@@ -1,0 +1,67 @@
+<body>
+    <div class="container-fluid">
+      <div class="header w-100 mt-3 text-center">
+        <div class="cabecera">
+          <div class="titulo">Palabras clave del proyecto</div>
+        </div>
+      </div>
+      <div class="botones">
+        <button class="btn btn-success my-3"><a routerLink="../agregar-palabra">Agregar palabra clave</a></button>
+      </div>
+      <div class="row">
+        <table class="table">
+            <thead>
+            <tr> 
+                <th scope="col">#PC</th>
+                <th scope="col">Palabra clave</th>
+                <th scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor= "let palabra of palabras">
+                    <th scope="row">{{palabra.idpalabraClave}}</th>
+                    <td>{{palabra.palabraClave}}</td>
+                    <td>
+                        <a class="btn btn-warning col-sm-9 my-1" (click)="triggerModal(modalData)" (click)="showPalabra(palabra)" ><i class="fa fa-edit"></i></a>
+                        <br>
+                        <a class="btn btn-danger col-sm-9" (click)="borrar(palabra)" ><i class="fa fa-trash"></i></a>          
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+    
+      
+    <ng-template #modalData let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Editar palabra clave</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+       <form #grupoForm="ngForm" >
+           <div class="form-group">
+               <label for="my-input">Palabra clave</label>
+               <input id="my-input" [(ngModel)]="palabraSelected.palabraClave" class="form-control" type="text" name="palabraClave">
+           </div>
+          <div class="form-group">
+            <label for="my-input">Seleccione el proyecto al que pertenece la palabra clave</label>
+                      <select  name="idproyecto"  [ngModel]="idproyecto"  (ngModelChange)="GrupoID($event)" class="custom-select">
+                          <option *ngFor="let pro of proyectos" [value]=pro.idproyecto>{{pro.titulo}}</option>
+                        </select>
+          </div>
+       </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success"(click)="modificarPalabra(palabraSelected)" (click)="modal.close('Save click')">Guardar</button>
+          <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cancelar</button>
+      </div>
+      </ng-template>
+      <div class="btn-up" id="button-up">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+    </body>
+    
+    

@@ -1,0 +1,67 @@
+
+<body>
+    <div class="container-fluid">
+      <div id="carouselExampleIndicators" class="carousel slide principal" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          </ol>
+          <div id="carouselExampleControls" data-interval="false" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item"
+                      *ngFor="let photo of carruselArray let i = index"
+                       [ngClass]="{'active': i == 0 }">
+                       <img [src]="photo.foto" class="d-block w-100">   
+                       <div class="carousel-caption d-none d-md-block">
+                        <!-- <p>{{photo.descripcion}}</p>   -->
+                        </div>      
+              </div>      
+            </div>
+          <!-- carousel controls omitted -->
+          </div>
+          <a class="carousel-control-prev bg-success" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only bg-success">Previous</span>
+          </a>
+          <a class="carousel-control-next bg-success" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only bg-success">Next</span>
+          </a>
+        </div>
+    <!-- </div> -->
+
+    <!-- <div id="Informacion" class="col-md-6 text-center  "> -->
+      <div class="contenedorInformacion" *ngFor="let info of informacionArray">
+       
+        <!-- <img id="innova" src="../../../assets/img/logoInnovaSup.png"> -->
+        <!-- <h3>INNOVA-MKT</h3> -->
+        <!-- <img src="../../../assets/img/logoInnova.png" alt="Equipo INNOVA"> -->
+     <p classs="lead">{{info.descripcioninnova}}</p>
+        <!-- <p class="lead"> El Grupo de Investigación INNOVA, perteneciente a la Escuela Superior Politécnica de Chimborazo, fue creado por un equipo de docentes investigadores multidisciplinario de la Facultad de Administración de Empresas el 08 de diciembre de 2016, bajo el objetivo general de contribuir a la gestión integral sostenible de los actores productivos y de servicio en la provincia de Chimborazo a través de estudios, diagnósticos e investigaciones enmarcados en las ciencias administrativas que fortalezcan la cultura empresarial.</p>
+      -->
+      </div>
+     <!-- </div> -->
+  <!-- </div> -->
+
+    </div>
+  <div  class="overlay" id="overlay">
+    <div class="popup">
+      <a href=""  id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+<div class="titulo">El grupo de investigación INNOVA te da la bienvenida al sistema de inteligencia de negocios</div>
+<div class="subtitulo">Aquí hallará toda la información relacionada al consumo de alimentos de la ciudad de Riobamba</div>
+  
+</div>
+  </div>
+
+
+<app-lacteo></app-lacteo>
+  <!-- ////////////////////////////// -->
+  
+
+          
+</body>
+
+

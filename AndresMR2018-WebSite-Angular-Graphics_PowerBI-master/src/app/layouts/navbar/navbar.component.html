@@ -1,0 +1,80 @@
+
+<div class="body">
+
+  <div id="HeaderNav">
+    <div class="secundario">
+      <p class="subtitulo" id="title" style="font-family: helvetica;">ESCUELA SUPERIOR POLITÉCNICA DE CHIMBORAZO</p>
+      <p class="subtitulo" id="sub">HACEMOS HISTORIA</p>
+      </div>
+     
+    <div class="logoRojo"><img src="../../../assets/img/EspochRojo.jpeg"></div>
+    <div class="logoInnova"><img src="../../../assets/img/logonuevo.jpg"></div>
+    </div>
+   
+    <nav id="navigation" class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">EQUIPO INNOVA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="contenedorLinks" class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav mr-5 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            </li>
+            
+            <li class="dropdown">
+              <a class="nav-link active">Sistema de Inteligencia de Negocios</a>
+              <div class="dropdown-content">
+              <a class="dropdown-item">Productos</a>
+              <div class="dropdown-hijo mb-5" >
+<div *ngFor="let gp of GruposProducto" >
+<a class="dropdown-item" routerLink="sistema/grupo/{{gp.idgrupo}}">{{gp.nombregrupo}}</a>
+              <!-- <a class="dropdown-item" routerLink="productoslacteo">Lácteos</a> -->
+              <li><hr class="dropdown-divider"></li>
+              <!-- <a class="dropdown-item" routerLink="productoscarnico">Cárnicos</a>
+              <li><hr class="dropdown-divider"></li>
+              <a class="dropdown-item" routerLink="productoscereal">Cereales</a>
+              <li><hr class="dropdown-divider"></li>
+              <a class="dropdown-item" routerLink="productoscondimento">Condimentos</a> -->
+            </div> 
+            </div>
+              <!-- <div class="dropdown-content2">
+                <a class="dropdown-item"href="#">Tendencias de consumo</a>
+              </div> -->
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="proyectos">Proyectos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="publicaciones">Publicaciones</a>
+            </li>
+
+
+            <li class="dropdown">
+              <a class="nav-link active">Nosotros</a>
+              <div class="dropdown-content">
+              <a class="dropdown-item" routerLink="quienessomos">Quienes somos</a>
+              <li><hr class="dropdown-divider"></li>
+              <a class="dropdown-item" routerLink="investigadores">Nuestro equipo</a>
+              <li><hr class="dropdown-divider"></li>
+              <a class="dropdown-item" routerLink="contactos">Contactanos</a>
+            </div>
+              <!-- <div class="dropdown-content2">
+                <a class="dropdown-item"href="#">Tendencias de consumo</a>
+              </div> -->
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="dashboard">Administración</a>
+            </li>
+          </ul>  
+        </div>
+      </div>
+    </nav>
+</div>
+
+<router-outlet></router-outlet>

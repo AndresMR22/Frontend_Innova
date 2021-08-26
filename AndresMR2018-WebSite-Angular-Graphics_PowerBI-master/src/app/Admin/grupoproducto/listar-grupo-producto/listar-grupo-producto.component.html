@@ -1,0 +1,141 @@
+<body>
+    <div class="container-fluid">
+        <div class="header w-100 mt-3 text-center">
+          <div class="cabecera">
+            <div class="titulo">Grupos de producto</div>            
+          </div>
+          
+          
+         
+        </div>
+        <div class="botones">
+          <button class="btn btn-success my-3"><a routerLink="../agregar-grupo">Agregar grupo</a></button>
+          
+          <button class="btn btn-primary my-3" *ngIf="gruposProductos.length>0"><a routerLink="../agregar-producto">Agregar producto</a></button>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                  <tr> 
+                  <th scope="col">GP#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Titulo</th>
+                    <th scope = "col">Imagen</th>
+                    <th scope="col">Descripción</th>
+                    <th scope ="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody> 
+                  <tr *ngFor="let grupo of gruposProductos; let i = index"> 
+                   <td>{{i+1}}</td>
+                    <td colspan>{{grupo.nombregrupo}}</td>
+                    <td colspan>{{grupo.titulo}}</td>
+                    <td colspan><a class="btn btn-secondary" (click)="triggerModal(modalData2)" (click)="showImagen(grupo)"><i class="fa fa-image"></i></a></td>
+                    <td colspan><a class="btn btn-info" (click)="triggerModal(modalData3)" (click)="showDescripcion(grupo)"><i class="fa fa-eye"></i></a></td>
+                    <td colspan>
+                    <a class="btn btn-warning col-sm-9 my-1" (click)="triggerModal(modalData)" (click)="showGrupo(grupo)"><i class="fa fa-edit"></i></a>
+                    <br>
+                    <a class="btn btn-danger col-sm-9" (click)="borrar(grupo)" ><i class="fa fa-trash"></i></a>
+                </td>
+                  </tr>    
+                  
+                  
+                 
+                </tbody>
+              </table>
+       
+          
+        </div>
+    
+
+      
+    </div>
+
+<ng-template #modalData let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Editar grupo de producto</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+ <form #grupoForm="ngForm" >
+     <div class="form-group">
+         <label for="my-input">Nombre de grupo</label>
+         <input id="my-input" [(ngModel)]="grupoSelected.nombregrupo" class="form-control" type="text" name="nombregrupo">
+     </div>
+     <div class="form-group">
+        <label for="my-input">Título de grupo</label>
+        <input id="my-input" [(ngModel)]="grupoSelected.titulo" class="form-control" type="text" name="titulogrupo">
+    </div>
+    <div class="form-group">
+      <label for="my-input">Foto de grupo actual</label>
+      <img name="fotoproducto" src="{{grupoSelected.fotogrupo}}">
+      <input id="my-input"  class="form-control" type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)" [(ngModel)]="grupoSelected.fotogrupo" name="fotogrupo">
+  </div>
+    <div class="form-group">
+        <label for="my-input">Descripción de grupo</label>
+        <textarea   [(ngModel)]="grupoSelected.descripcion"  name="descripciongrupo" class="form-control" id="textAreaExample1" rows="4"></textarea>
+      
+      </div>
+ </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success"(click)="modificarGrupo(grupoSelected)" (click)="modal.close('Save click')">Guardar</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cancelar</button>
+</div>
+</ng-template>
+
+
+
+<ng-template #modalData2 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title2">Imagen del grupo</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #grupoForm="ngForm" >
+      <div class="form-group">
+          <label for="my-input"></label>
+          <img name="fotogrupo" src="{{grupoSelected.fotogrupo}}"> 
+        </div>
+  </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
+</div>
+</ng-template>
+
+
+
+
+
+<ng-template #modalData3 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title2">Descripción del grupo</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #grupoForm="ngForm" >
+      <div class="form-group">
+        <label for="my-input">Descripción de grupo</label>
+        <textarea   [(ngModel)]="grupoSelected.descripcion"  name="descripciongrupo" class="form-control" id="textAreaExample1" rows="4"></textarea>
+      
+    </div>
+  </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
+</div>
+</ng-template>
+    
+    <div class="btn-up" id="button-up">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    
+    </body>

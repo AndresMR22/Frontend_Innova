@@ -1,0 +1,39 @@
+<body>
+    
+    <div class="container mx-5 my-5" >
+        <h3>Agregar información</h3>
+        <form (submit)="addInformacion($event)">
+          <div class="form-group m-12">
+              <input type="text" [(ngModel)]="tbienvenida" name="titulobienvenida" class="form-control" placeholder="Ingresar el título de bienvenida">
+            </div>
+            <div class="form-group m-12">
+              <input type="text" [(ngModel)]="sbienvenida" name="subtitulobienvenida" class="form-control" placeholder="Ingresar el subtitulo de bienvenida">
+            </div>
+            <div class="form-group m-12">
+                <textarea  [(ngModel)]="qsomos"  name="quienessomos" class="form-control" id="textAreaExample1" rows="4" placeholder="Ingresar descripción acerca del origen o historia del equipo de investigación INNOVA"></textarea>
+            </div>
+            <div class="form-group m-12">
+              <textarea  [(ngModel)]="tituloseccion1"  name="tituloseccion1" class="form-control" id="textAreaExample1" rows="4" placeholder="Ingresar el título para la sección#1 de la página principal"></textarea>
+          </div>
+          <div class="form-group m-12">
+            <textarea  [(ngModel)]="subtituloseccion1"  name="subtituloseccion1" class="form-control" id="textAreaExample1" rows="4" placeholder="Ingresar el subtitulo para la sección#1 de la página principal"></textarea>
+        </div>
+            <div class="form-group md-12">
+                <input #inputFoto type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)"  
+                />
+                <img  class="imagenSeleccionada" src={{imgquienessomos}}>
+              </div>
+              
+    
+              <div class="form-group m-12">
+                <textarea  [(ngModel)]="descripcion"  name="descripcion" class="form-control" id="textAreaExample1" rows="4" placeholder="Ingresar aquí la descripción del sistema de inteligencia de negocios"></textarea>
+            </div>
+              <span class="input-group-addon">
+                  <button type="submit" class="btn btn-primary">
+                      Guardar
+                    </button>
+              </span>
+          
+          </form>
+</div>
+</body>

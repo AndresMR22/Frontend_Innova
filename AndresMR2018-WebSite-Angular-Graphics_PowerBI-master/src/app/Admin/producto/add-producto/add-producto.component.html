@@ -1,0 +1,32 @@
+
+<body>
+    
+    <div class="container mx-5 my-5" >
+        <h3>Crear un producto</h3>
+        <form (submit)="addProducto($event)">
+          
+              <div class="form-group">
+                <input type="text" [(ngModel)]="nombreproducto" name="nombreproducto" class="form-control" placeholder="Ingresar nombre del producto">
+              </div>
+
+              <div class="form-group">
+                <label for="my-input">Seleccione un grupo</label>
+                <select  name="idgrupoproducto"  [ngModel]="idgrupoproducto" (ngModelChange)="GrupoID($event)" class="custom-select">
+                    <option *ngFor="let grup of grupos" [value]=grup.idgrupo>{{grup.nombregrupo}}</option>
+                  </select>
+              </div>
+
+              <div class="form-group md-12">
+                <input #inputFoto type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)"/>
+                <img class="imagenSeleccionada" src={{fotoproducto}}>
+              </div>
+            
+              <span class="input-group-addon">
+                  <button type="submit" class="btn btn-primary">
+                      Guardar
+                    </button>
+              </span>
+          
+          </form>
+</div>
+</body>

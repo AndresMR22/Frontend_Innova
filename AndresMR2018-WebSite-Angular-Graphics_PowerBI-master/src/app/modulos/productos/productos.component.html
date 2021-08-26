@@ -1,0 +1,143 @@
+
+<body>
+    <div class="container-fluid justify-content-center">
+<div class="titularProductos">
+<div class="jumbotron jumbotron-fluid  justify-content-center">
+  <div class="container-fluid justify-content-center">
+    <span class="display-6 text-center">¿En qué tipo de lácteo se encuentra interesado? </span>
+    <p class="lead text-center">En el grupo de lácteos encontrará información sobre el comportamiento de consumo de leche, queso, yogurt y mantequilla.</p>
+  </div>
+</div>
+</div>
+
+<div class="contenedor">
+  <main class="contenido-principal" *ngFor="let pro of productos">
+
+      <article class="entrada">
+        <div class="cuadrosombra">
+          <img src="../../../../assets/img/leche.jpg" alt="Leche">
+          <div class="contenido">
+              <h3>{{pro.nombreproducto}}</h3>
+              <div class="dropdown">
+                <div class="btn btn-warning dropdown-toggle mt-3"><span>Tipos de reporte</span></div>
+                <div class="dropdown-content">
+                  <a class="dropdown-item" routerLink="t1leche">Información general</a>
+                            <hr class="dropdown-divider">
+                  <a class="dropdown-item" routerLink="t2leche">Lugar de compra</a>
+                            <hr class="dropdown-divider">
+                            <a class="dropdown-item" routerLink="t3leche">Medio de compra post pandemia</a>
+                            <hr class="dropdown-divider">
+                            <a class="dropdown-item" routerLink="t4leche">Importancia de consumo y quienes consumen</a>
+                            <hr class="dropdown-divider">
+                          
+                            <a class="dropdown-item" routerLink="t5leche">Cantidad, frecuencia y gasto en el consumo</a>
+                            <hr class="dropdown-divider">
+                        
+                            <a class="dropdown-item" routerLink="t6leche">Tipos de variantes mas consumidas</a>     
+                          </div>       
+              </div>             
+                    </div>
+                    </div>
+      </article>
+
+<!-- 
+      <article class="entrada">
+        <div class="cuadrosombra">
+        <img src="../../../../assets/img/yogurtCart.jpg" alt="Yogurt">
+        <div class="contenido">
+            <h3>Yogurt</h3>
+            <div class="dropdown">
+              <div class="btn btn-warning dropdown-toggle mt-3"><span>Tipos de reporte</span></div>
+              <div class="dropdown-content">
+                <a class="dropdown-item" routerLink="t1yogurt">Información general</a>
+                          <hr class="dropdown-divider">
+                <a class="dropdown-item" routerLink="t2yogurt">Lugar de compra</a>
+                          <hr class="dropdown-divider">
+                          <a class="dropdown-item" routerLink="t3yogurt">Medio de compra post pandemia</a>
+                          <hr class="dropdown-divider">
+                          <a class="dropdown-item" routerLink="t4yogurt">Importancia de consumo y quienes consumen</a>
+                          <hr class="dropdown-divider">
+                          <a class="dropdown-item" routerLink="t5yogurt">Cantidad, frecuencia y gasto en el consumo</a>
+                          <hr class="dropdown-divider">
+                         
+                          <a class="dropdown-item" routerLink="t6yogurt">Tipos de variantes mas consumidas</a>     
+                        </div>       
+            </div>             
+                </div>
+                </div>
+    </article>
+
+
+
+    <article class="entrada">
+      <div class="cuadrosombra">
+      <img src="../../../../assets/img/queso.jpg" alt="Queso">
+      <div class="contenido">
+          <h3>Queso</h3>
+          <div class="dropdown">
+            <div class="btn btn-warning dropdown-toggle mt-3"><span>Tipos de reporte</span></div>
+            <div class="dropdown-content">
+              <a class="dropdown-item" routerLink="t1queso">Información general</a>
+                        <hr class="dropdown-divider">
+              <a class="dropdown-item" routerLink="t2queso">Lugar de compra</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" routerLink="t3queso">Medio de compra post pandemia</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" routerLink="t4queso">Importancia de consumo y quienes consumen</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" routerLink="t5queso">Cantidad, frecuencia y gasto en el consumo</a>
+                        <hr class="dropdown-divider">
+                   
+                        <a class="dropdown-item" routerLink="t6queso">Tipos de variantes mas consumidas</a>     
+                      </div>       
+          </div>             
+            </div>
+            </div>
+  </article>
+
+
+  <article class="entrada">
+    <div class="cuadrosombra">
+    <img src="../../../../assets/img/mantequilla.jpg" alt="Mantequilla">
+    <div class="contenido">
+        <h3>Mantequilla</h3>
+        <div class="dropdown">
+          <div class="btn btn-warning dropdown-toggle mt-3"><span>Tipos de reporte</span></div>
+          <div class="dropdown-content">
+            <a class="dropdown-item" routerLink="t1mantequilla">Información general</a>
+                      <hr class="dropdown-divider">
+            <a class="dropdown-item" routerLink="t2mantequilla">Lugar de compra</a>
+                      <hr class="dropdown-divider">
+                      <a class="dropdown-item" routerLink="t3mantequilla">Medio de compra post pandemia</a>
+                      <hr class="dropdown-divider">
+                      <a class="dropdown-item" routerLink="t4mantequilla">Importancia de consumo y quienes consumen</a>
+                      <hr class="dropdown-divider">
+                      <a class="dropdown-item" routerLink="t5mantequilla">Cantidad, frecuencia y gasto en el consumo</a>
+                      <hr class="dropdown-divider">
+               
+                      <a class="dropdown-item" routerLink="t6mantequilla">Tipos de variantes mas consumidas</a>     
+                    </div>       
+        </div>             
+        </div>
+      </div>
+</article> -->
+
+      </main>
+
+      <router-outlet></router-outlet> 
+
+
+      <div class="btn-up" id="button-up">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+
+      <div class="marcaEspoch">
+        <img src="../../../assets/img/marcaEspoch.png">
+      </div>
+      
+</div>
+
+
+        
+    </div>
+</body>

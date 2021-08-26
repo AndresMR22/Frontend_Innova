@@ -1,0 +1,22 @@
+<body>
+    
+    <div class="container mx-5 my-5" >
+        <h3>Agregar un objetivo específico</h3>
+        <form (submit)="addObjetivo($event)">
+          <div class="form-group">
+              <input type="text" [(ngModel)]="nombreobjetivo" name="nombreobjetivo" class="form-control" placeholder="Ingresar el objetivo especifico">
+          </div>
+          <div class="form-group">
+            <label for="my-input">Seleccione el proyecto al que pertenece el objetivo específico</label>
+            <select  name="idproyecto"  [ngModel]="idproyecto" (ngModelChange)="GrupoID($event)" class="custom-select">
+                <option *ngFor="let pro of proyectos" [value]=pro.idproyecto>{{pro.titulo}}</option>
+              </select>
+          </div>
+          <span class="input-group-addon">
+            <button type="submit" class="btn btn-primary">
+                Guardar
+              </button>
+        </span>
+          </form>
+</div>
+</body>

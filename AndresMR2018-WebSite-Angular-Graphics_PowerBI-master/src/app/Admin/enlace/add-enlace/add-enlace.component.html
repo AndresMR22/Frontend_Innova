@@ -1,0 +1,25 @@
+<body>
+    
+    <div class="container mx-5 my-5" >
+        <h3>Agregar un enlace</h3>
+        <form (submit)="addEnlace($event)">
+          <div class="form-group">
+              <input type="text" [(ngModel)]="nombreenlace" name="nombreenlace" class="form-control" placeholder="Ingresar título de enlace">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="enlace" name="enlace" class="form-control" placeholder="Ingresar el enlace">
+        </div>
+          <div class="form-group">
+            <label for="my-input">Seleccione el reporte al que pertenece el enlace</label>
+            <select  name="idreporte"  [ngModel]="idreporte" (ngModelChange)="GrupoID($event)" class="custom-select">
+                <option *ngFor="let reporte of reportes" [value]=reporte.idreporte>{{reporte.nombrereporte}}</option>
+              </select>
+          </div>
+          <span class="input-group-addon">
+            <button type="submit" class="btn btn-primary">
+                Guardar
+              </button>
+        </span>
+          </form>
+</div>
+</body>

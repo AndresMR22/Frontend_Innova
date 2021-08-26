@@ -1,0 +1,83 @@
+
+<body>
+    <div class="container-fluid">
+        <div class="header w-100 mt-3 text-center">
+          <div class="cabecera">
+            <div class="titulo">Contactos</div>
+          </div>
+        </div>
+        <div class="botones">
+          <button class="btn btn-success my-3"><a routerLink="../agregar-contacto">Agregar contacto</a></button>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                  <tr> 
+                  <th scope="col">P#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Correo electrónico</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody> 
+                  <tr *ngFor="let contacto of contactos; let i = index"> 
+                   <td>{{i+1}}</td>
+                    <td colspan>{{contacto.nombreContacto}}</td>
+                    <td colspan>{{contacto.telefonoContacto}}</td>
+                    <td colspan>{{contacto.correoContacto}}</td>
+                    <td colspan><img src="{{contacto.fotocontacto}}"></td>
+                    <td>
+                        <a class="btn btn-warning col-sm-9 my-1" (click)="triggerModal(modalData)" (click)="showContacto(contacto)" ><i class="fa fa-edit"></i></a>
+                        <br>
+                        <a class="btn btn-danger col-sm-9" (click)="borrar(contacto)" ><i class="fa fa-trash"></i></a>
+                       
+                    </td>
+                  </tr>    
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    
+<ng-template #modalData let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Editar contacto</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+ <form #grupoForm="ngForm" >
+     <div class="form-group">
+         <label for="my-input">Nombre de contacto</label>
+         <input id="my-input" [(ngModel)]="contactoSelected.nombreContacto" class="form-control" type="text" name="nombrecontacto">
+     </div>
+    <div class="form-group">
+        <label for="my-input">Teléfono de contacto</label>
+        <input id="my-input" [(ngModel)]="contactoSelected.telefonoContacto" class="form-control" type="text" name="telefonocontacto">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Correo electrónico</label>
+        <input id="my-input" [(ngModel)]="contactoSelected.correoContacto" class="form-control" type="text" name="correocontacto">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Foto actual</label>
+        <img name="fotoproducto" src="{{fotoContacto.fotocontacto}}">
+        <input id="my-input"  class="form-control" type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)" [(ngModel)]="contactoSelected.fotocontacto" name="foto">
+    </div>
+ </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success"(click)="modificarContacto(contactoSelected)" (click)="modal.close('Save click')">Guardar</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cancelar</button>
+</div>
+</ng-template>
+    
+    <div class="btn-up" id="button-up">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    
+    </body>

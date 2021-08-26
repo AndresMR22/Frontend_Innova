@@ -1,0 +1,40 @@
+
+<body>
+    <div class="container-fluid">
+        <div class="header mt-3 text-center">
+          <div class="cabecera">
+            <div class="titulo">Quienes somos</div>
+          </div>
+        </div>
+            <div class="container" id="proyectos" *ngFor="let info of infos">
+<div class="informacion">
+  <p>{{info.quienessomos}}</p>
+</div>
+
+<div class="logo">
+    <img src="{{info.imagenquienessomos}}">
+</div>
+
+            </div>
+            <div class="tituloGaleria">Galería</div>
+            <div class="contenedorGaleria" >
+                <div class="galeria" *ngFor="let img of galerias">
+                    <article class="foto"><img src="{{img.foto}}"></article>
+                </div>
+        
+            </div>
+            
+        
+    
+    <div id="button-up">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    
+    <div class="marcaEspoch">
+      <img src="../../../assets/img/marcaEspoch.png">
+    </div>
+    
+    </div>
+    </body>
+    

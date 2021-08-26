@@ -1,0 +1,105 @@
+
+<body>
+    <div class="container-fluid">
+        <div class="header w-100 mt-3 text-center">
+          <div class="cabecera">
+            <div class="titulo">Investigadores</div>
+          </div>
+        </div>
+        <div class="botones">
+          <button class="btn btn-success my-3"><a routerLink="../agregar-investigador">Agregar investigador</a></button>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                  <tr> 
+                  <th scope="col">P#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Foto</th>
+                    <th scope="col">correo</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody> 
+                  <tr *ngFor="let inv of investigadores; let i = index"> 
+                   <td>{{i+1}}</td>
+                    <td colspan>{{inv.nombreinvestigador}}</td>
+                    <td colspan><a class="btn btn-secondary" (click)="triggerModal(modalData2)" (click)="showImagen(inv)"><i class="fa fa-image"></i></a></td>
+                    <td colspan>{{inv.emailinvestigador}}</td>
+                    <td colspan>{{inv.cargoinvestigador}}</td>
+                    <td>
+                        <a class="btn btn-warning col-sm-9 my-1" (click)="triggerModal(modalData)" (click)="showInvestigador(inv)" ><i class="fa fa-edit"></i></a>
+                        <br>
+                        <a class="btn btn-danger col-sm-9" (click)="borrar(inv)" ><i class="fa fa-trash"></i></a>
+                       
+                    </td>
+                  </tr>    
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    
+<ng-template #modalData let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Editar investigador</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+ <form #grupoForm="ngForm" >
+     <div class="form-group">
+         <label for="my-input">Nombre de investigador</label>
+         <input id="my-input" [(ngModel)]="investigadorSelected.nombreinvestigador" class="form-control" type="text" name="nombreinvestigador">
+     </div>
+     <div class="form-group">
+        <label for="my-input">Foto actual</label>
+        <img name="fotoproducto" src="{{fotoInvestigador.foto}}">
+        <input id="my-input"  class="form-control" type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)" [(ngModel)]="investigadorSelected.foto" name="foto">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Correo de investigador</label>
+        <input id="my-input" [(ngModel)]="investigadorSelected.emailinvestigador" class="form-control" type="text" name="correoinvestigador">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Cargo de investigador</label>
+        <input id="my-input" [(ngModel)]="investigadorSelected.cargoinvestigador" class="form-control" type="text" name="cargoinvestigador">
+    </div>
+ </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success"(click)="modificarInvestigador(investigadorSelected)" (click)="modal.close('Save click')">Guardar</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cancelar</button>
+</div>
+</ng-template>
+
+
+
+<ng-template #modalData2 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title2">Imagen del investigador</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #grupoForm="ngForm" >
+      <div class="form-group">
+          <label for="my-input"></label>
+          <img name="fotoinvestigador" src="{{investigadorSelected.foto}}"> 
+        </div>
+  </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
+</div>
+</ng-template>
+    
+    <div class="btn-up" id="button-up">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    
+    </body>

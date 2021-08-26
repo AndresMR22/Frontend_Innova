@@ -1,0 +1,65 @@
+<body>
+<div class="container-fluid">
+    <div class="header w-100 mt-3 text-center">
+      <div class="cabecera">
+        <div class="titulo">Reportes del sistema</div>
+      </div>
+    </div>
+    <div class="botones">
+      <button class="btn btn-success my-3"><a routerLink="../agregar-reporte">Agregar reporte</a></button>
+      <button class="btn btn-primary my-3" *ngIf="reportes.length>0"><a routerLink="../agregar-enlace">Agregar enlace</a></button>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+              <tr> 
+              <th scope="col">R#</th>
+                <th scope="col">Título de enlace</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody> 
+              <tr *ngFor="let reporte of reportes; let i = index"> 
+               <td>{{i+1}}</td>
+                <td colspan>{{reporte.nombrereporte}}</td>
+               
+                <td>
+                    <a class="btn btn-warning col-sm-9 my-1" (click)="triggerModal(modalData)" (click)="showReporte(reporte)" ><i class="fa fa-edit"></i></a>
+                    <br>
+                    <a class="btn btn-danger col-sm-9" (click)="borrar(reporte)" ><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>    
+            </tbody>
+          </table>
+    </div>
+</div>
+
+ 
+<ng-template #modalData let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Editar reporte</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+   <form #grupoForm="ngForm" >
+       <div class="form-group">
+           <label for="my-input">Título de reporte</label>
+           <input id="my-input" [(ngModel)]="reporteSelected.nombrereporte" class="form-control" type="text" name="nombrereporte">
+       </div>
+     
+   </form>
+   <div class="form-group">
+    <label for="my-input">Seleccione el producto al que pertenece el reporte</label>
+              <select  name="idproducto"  [ngModel]="idproducto"  (ngModelChange)="GrupoID($event)" class="custom-select">
+                  <option *ngFor="let pro of productos" [value]=pro.idproducto>{{pro.nombreproducto}}</option>
+                </select>
+  </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success"(click)="modificarReporte(reporteSelected)" (click)="modal.close('Save click')">Guardar</button>
+      <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cancelar</button>
+  </div>
+  </ng-template>
+</body>

@@ -1,0 +1,37 @@
+
+
+<body>
+    
+    <div class="container mx-5 my-5" >
+        <h3>Agregar contacto</h3>
+        <form (submit)="addContacto($event)">
+          
+              <div class="form-group">
+                <input type="text" [(ngModel)]="nombrecontacto" name="nombrecontacto" class="form-control" placeholder="Ingresar nombre del contacto">
+              </div>
+
+              <div class="form-group">
+                <input type="text"  [(ngModel)]="correocontacto" name="correocontacto" class="form-control" placeholder="Ingresar correo del contacto">
+              </div>
+
+              <div class="form-group">
+                <input type="text" [(ngModel)]="telefonocontacto" name="telefonocontacto" class="form-control" placeholder="Ingresar telefono">
+              </div>
+
+
+              <div class="form-group md-12">
+                <input #inputFoto type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)" 
+                
+                />
+                <img class="imagenSeleccionada" src={{fotocontacto}}>
+              </div>
+            
+              <span class="input-group-addon">
+                  <button type="submit" class="btn btn-primary">
+                      Guardar
+                    </button>
+              </span>
+          
+          </form>
+</div>
+</body>

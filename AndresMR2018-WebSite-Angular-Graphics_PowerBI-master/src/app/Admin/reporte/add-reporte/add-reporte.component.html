@@ -1,0 +1,23 @@
+<body>
+    
+    <div class="container mx-5 my-5" >
+        <h3>Agregar un reporte</h3>
+        <form (submit)="addReporte($event)">
+          <div class="form-group">
+              <input type="text" [(ngModel)]="nombrereporte" name="nombrereporte" class="form-control" placeholder="Ingresar nombre de reporte">
+             
+          </div>
+          <div class="form-group">
+            <label for="my-input">Seleccione el producto al que pertenece el reporte</label>
+            <select  name="idproducto"  [ngModel]="idproducto" (ngModelChange)="GrupoID($event)" class="custom-select">
+                <option *ngFor="let producto of productos" [value]=producto.idproducto>{{producto.nombreproducto}}</option>
+              </select>
+          </div>
+          <span class="input-group-addon">
+            <button type="submit" class="btn btn-primary">
+                Guardar
+              </button>
+        </span>
+          </form>
+</div>
+</body>

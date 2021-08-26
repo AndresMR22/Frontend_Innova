@@ -1,0 +1,93 @@
+<body>
+    
+
+  <div class="container-fluid justify-content-center">
+
+    <div class="titularProductos">
+      <div class="jumbotron jumbotron-fluid  justify-content-center">
+    
+        <div class="container-fluid justify-content-center" *ngFor="let info of infos">
+          <div class="row">
+            <div class="col-md-3"><img src="../../../assets/img/marcaEspoch.png"></div>
+            <div class="col-md-9">
+              <span class="display-6 text-center mb-5" id="titulo">{{info.tituloseccion1}}</span>
+              <p class="lead text-center">{{info.subtituloseccion1}}</p>
+            </div>
+          </div>
+         </div>
+      </div>
+    </div>
+    
+    <div class="contenedor" >
+      <main class="contenido-principal" >
+          <article class="entrada" *ngFor="let gp of grupos">
+            <div class="cuadrosombra">
+              <img src="{{gp.fotogrupo}}" alt="lacteos">
+              <div class="contenido">
+                  <h3>{{gp.nombregrupo}}</h3> 
+                  <a routerLink="sistema/grupo/{{gp.idgrupo}}" class="btn btn-warning">Mostrar estadísticas</a>
+              </div>
+            </div>
+    
+          </article>
+<!--     
+          <article class="entrada">
+            <div class="cuadrosombra">
+              <img src="../../../assets/img/carnicos.jpg" alt="carnicos">
+              <div class="contenido">
+                  <h3>Cárnicos</h3>
+                  <a routerLink="productoscarnico" class="btn btn-warning">Mostrar estadísticas</a>
+              </div>
+            </div>
+          </article>
+    
+          <article class="entrada">
+            <div class="cuadrosombra">
+              <img src="../../../assets/img/cereales.jpg" alt="cereales">
+              <div class="contenido">
+                  <h3>Cereales</h3>
+                  <a routerLink="productoscereal" class="btn btn-warning">Mostrar estadísticas</a>
+              </div>
+              </div>
+          </article>
+    
+          <article class="entrada">
+            <div class="cuadrosombra">
+              <img src="../../../assets/img/condimentos.jpg" alt="condimentos">
+              <div class="contenido">
+                  <h3>Condimentos</h3>
+                  <a routerLink="productoscondimento" class="btn btn-warning">Mostrar estadísticas</a>
+              </div>
+            </div>
+          </article> -->
+         
+      </main>
+    
+      
+    
+    </div>
+    
+            <!-- <div class="titularProductos">
+              <div class="jumbotron jumbotron-fluid  justify-content-center">
+                <div class="container justify-content-center">
+                  <span class="display-6 text-center">Tendencias de consumo post pandemia</span>
+                  <p class="lead text-center">Dentro de esta sección se presenta un análisis del comportamiento de los gastos de las familias de la ciudad de Riobamba antes y despues de la pandemia (COVID-19).</p>
+                </div>
+              </div>
+            </div> -->
+    
+       
+          </div>
+    
+        
+            <div class="buttonUp" id="button-up">
+              <i class="fas fa-chevron-up"></i>
+            </div>
+        
+    
+
+</body>
+
+
+
+

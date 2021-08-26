@@ -1,0 +1,104 @@
+<body>
+    <div class="container-fluid justify-content-center">
+<div class="titularProductos">
+<div class="jumbotron jumbotron-fluid  justify-content-center">
+  <div class="container-fluid justify-content-center">
+    <span class="display-6 text-center">{{grupos.titulo}}</span>
+    <p class="lead text-center">{{grupos.descripcion}}</p>
+  </div>
+</div>
+</div>
+
+<div class="contenedor">
+  <main class="contenido-principal"  >
+
+
+        <article class="entrada" *ngFor="let pro of productos">
+        <div class="cuadrosombra">
+          <img src="{{pro.fotoproducto}}" alt="foto">
+          <div class="contenido">
+              <h3>{{pro.nombreproducto}}</h3>
+              <div class="dropdown" >
+                <div class="btn btn-warning dropdown-toggle mt-3" ><span>Tipos de reporte</span></div>
+                <div class="dropdown-content"  >
+                  <div *ngFor="let rep of pro.reportes" >
+                  <a class="dropdown-item"  (click)="onClickReporteId(rep.idreporte)">{{rep.nombrereporte}}</a>
+                            <hr class="dropdown-divider">
+                  </div>
+                          </div>       
+              </div>             
+                    </div>
+                    </div>
+      </article>
+
+      <!-- <article class="entrada" *ngFor="let pro of grupos.productos">
+        <div class="cuadrosombra">
+          <img src="{{pro.fotoproducto}}" alt="foto">
+          <div class="contenido">
+              <h3>{{pro.nombreproducto}}</h3>
+              <div class="dropdown" >
+                <div class="btn btn-warning dropdown-toggle mt-3" ><span>Tipos de reporte</span></div>
+                <div class="dropdown-content"  >
+                  <div *ngFor="let rep of pro.reportes" >
+                  <a class="dropdown-item"  (click)="onClickReporteId(rep.idreporte)">{{rep.nombrereporte}}</a>
+                            <hr class="dropdown-divider">
+                  </div>
+                          </div>       
+              </div>             
+                    </div>
+                    </div>
+      </article> -->
+
+      </main>
+
+      
+ 
+<div class="container justify-content-center" *ngFor="let graf of enlaces">
+  <!-- <div class="titulo">INFORMACIÓN GENERAL DE LECHE</div> -->
+  <span class="lead">{{graf.nombreenlace}}</span>
+  <!-- <div><a class=" btn btn-primary" href="https://mega.nz/file/TaBXwarD#D8PICoVtqwEZZg7d3_gN_cuOiRRh59q0D9KarOact-E" target="_blank" value="Descargar Reportes"><i class="fas fa-file-download"> Descargar reporte</i></a></div> -->
+  <div class="box  pb-5">
+  <iframe width="600" height="373.5" [src]="graf.urlSafe" frameborder="0" allowFullScreen="true"></iframe>
+  </div>
+
+<!--   
+  <span class="lead">Consumo de leche vs Género</span>
+  <div><a class=" btn btn-primary" href="https://mega.nz/file/2e5kjIwK#gDSYQL1TVx1CP-EmCprWoZY3XXwXj970WA95WWRJVXE" target="_blank" value="Descargar Reportes"><i class="fas fa-file-download"> Descargar reporte</i></a></div>
+  
+  <div class="box pb-5">
+  <iframe width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMGJiMDZhMzUtYzM5Ni00NjYwLThlNDAtMzAwN2QyNzliNTBkIiwidCI6ImQ3Zjg2NzEwLTAxZTEtNDYxZC04NTk5LTc1OGRlNDU0MmUyYiIsImMiOjR9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>   
+  </div>
+ 
+  <span class="lead">Consumo de leche vs Ingresos</span>
+  <div><a class=" btn btn-primary" href="https://mega.nz/file/aTpQCQ4S#B5qo04E60O3A7P76Et9KhPWykI8C_rruHCoUkP40W_U" target="_blank" value="Descargar Reportes"><i class="fas fa-file-download"> Descargar reporte</i></a></div>
+  
+  <div class="box pb-5">
+  <iframe width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiODE3YzliNDYtZWY0My00NmQwLTlkYmQtOTZjNDRlNTc5ZmE0IiwidCI6ImQ3Zjg2NzEwLTAxZTEtNDYxZC04NTk5LTc1OGRlNDU0MmUyYiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+  </div> -->
+
+ </div>
+
+
+      <!-- <router-outlet></router-outlet>  -->
+
+
+
+
+      <div class="btn-up" id="button-up">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+
+      <div class="marcaEspoch">
+        <img src="../../../assets/img/marcaEspoch.png">
+      </div>
+      
+</div>
+
+
+        
+    </div>
+</body>
+
+
+
+

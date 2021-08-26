@@ -1,0 +1,50 @@
+
+<body>
+<div class="container-fluid">
+
+    <div class="header w-100 mt-3 text-center">
+         <div class="cabecera">
+            <div class= "titulo" id="titulo">Investigadores INNOVA</div>
+         </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+<div class="row w-100 text-center">
+<!-- TRAIDA DE DATOS BACKEND Y DATABASE -->
+    <!-- <div class="col-md-4 text-center" *ngFor="let inv of investigadores" >
+              <img src="{{'data:image/jpg;base64,' + inv.foto}}" alt="Foto investigador">
+        <p class="nombreInv pt-2"><a href="../../../assets/docs/Hoja de vida Carlos Delgado.pdf" alt="Hoja de vida" download="CV_CarlosDelgado.pdf">Ing.{{inv.nombreinvestigador}}</a></p>
+        <strong>{{inv.cargoinvestigador}}</strong>
+        <p>{{inv.emailinvestigador}}</p>   
+    </div> -->
+
+    <div class="col-md-4 text-center" *ngFor="let inv of investigadores">
+        <!-- <img  src="../../../assets/img/CarlosDelgado.jpg" alt="Carlos Delgado"> -->
+              <img id="investigadorFoto" src="{{inv.foto}}" alt="Foto investigador">
+        <p class="nombreInv pt-2"><a href="../../../assets/docs/Hoja de vida Carlos Delgado.pdf" alt="Hoja de vida" download="CV_CarlosDelgado.pdf">Ing.{{inv.nombreinvestigador}}</a></p>
+        <strong class="cargoInv">{{inv.cargoinvestigador}}</strong>
+        <p class="correoInv">{{inv.emailinvestigador}}</p>   
+    </div>
+
+  
+</div> 
+
+
+
+
+<div class="btn-up" id="button-up">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  
+<div class="marcaEspoch">
+    <img src="../../../assets/img/marcaEspoch.png">
+</div>
+
+    </div>
+
+ 
+
+
+</body>

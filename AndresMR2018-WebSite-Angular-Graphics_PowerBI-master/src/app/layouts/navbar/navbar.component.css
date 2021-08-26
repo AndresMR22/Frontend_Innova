@@ -1,0 +1,540 @@
+#HeaderNav{
+width: 100%;
+position:relative;
+
+}
+
+.body{
+    margin-left: 55px;
+    margin-right: 55px;
+    line-height: 1.6;
+}
+
+
+.secundario{
+    height: 100px;
+        background: #009440 url(../../../assets/img/rayasEspoch.png);
+        background-repeat: no-repeat;
+}
+
+.secundario p{
+    margin: 0px auto !important;
+    color: #fff !important;
+    text-align: center;
+}
+
+.navbar{
+    background-color: #009440;
+}
+
+nav a{
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+   font-size:14px;
+}
+
+nav ul li a{
+    font-weight: bold;
+    color:#fff;
+}
+
+#title{
+    font-size: 20px;
+    width: auto;
+    font-family: Helvetica;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.subtitulo{
+    font-family: times new roman;
+    font-size: 14px;
+    /* font-style: italic; */
+}
+
+#sub {
+    font-style:italic;
+}
+
+p{
+    margin: 1em 0 2em;
+}
+
+
+.logoRojo{
+    padding-left: 90px;
+    padding-top: 5px;
+    position: absolute;
+    top: 0;
+}
+
+.logoInnova img{
+    width:250px;
+     transition:all ease .1s;
+ }
+
+ 
+.logoInnova{
+    margin-left:900px;
+    margin-top:20px;
+    position:absolute;
+    top:0;
+}
+
+.logoRojo img{
+    width: 90px;
+    transition:all ease .1s;
+}
+
+#navigation{
+    margin-top:15px;
+    padding:0 10;
+}
+
+/* #contenedorLinks{
+    display: flex;
+    flex-flow: row wrap;
+} */
+
+
+
+nav ul li a:hover{
+color:black;
+}
+
+.nav-link{
+    flex-grow:1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #009440;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+
+  .dropdown-content a{
+      text-decoration: none;
+      color:black;
+  }
+  
+  .dropdown-hijo{
+  display:none;
+  position:absolute;
+  background-color:#009440;
+  min-width:180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding:15px 18px;
+  margin-top:-40px;
+  margin-left:140px;
+  z-index: 2;
+  margin-bottom:150px  !important;
+  
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content2 {
+    display: block;
+  }
+  
+  .dropdown-content:hover .dropdown-hijo{
+  display:block;
+  }
+  
+  .dropdown-hijo a{
+  text-decoration:none;
+  color:black;
+  }
+
+
+
+
+/* ANCHO DEL BODY PARA CELULAR*/
+@media screen and (max-width:520px){
+    .body{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+
+
+@media screen and (min-width: 768px){
+    #title{
+        font-size:20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+
+
+/*       Cambios del icono de la Poli de acuerdo al ancho del dispositivo    */
+  @media(max-width:810px){
+      .logoRojo{
+          padding-left: 50px;
+      }
+  }
+
+  @media(max-width:770px){
+    .logoRojo{
+        padding-left: 20px;
+    }
+    .logoRojo img{
+        margin-top:35px;
+        width: 50px;
+    }
+}  
+/* 
+  @media(max-width:720px){
+    .logoRojo{
+        padding-left: 30px;
+    }
+} */
+
+/* @media(max-width:690px){
+    .logoRojo{
+        padding-left: 20px;
+        margin-top:30px;
+    }
+    .logoRojo img{
+        width: 60px;
+    }
+} */
+
+/* @media(max-width:620px){
+    .logoRojo{
+        padding-left: 15px;
+    }
+    .logoRojo img{
+        width: 50px;
+    }
+} */
+
+
+/*Cambios en el icono del grupo INNOVA de acuerdo al ancho del dispositivo*/
+@media screen and (max-width:1090px){
+    .logoInnova{
+        margin-left:680px;
+    }
+}
+
+@media screen and (max-width:1040px){
+    .logoInnova{
+        margin-left:660px;
+    }
+}
+
+@media screen and (max-width:1020px){
+    .logoInnova{
+        margin-left:650px;
+    }
+    .logoInnova img{
+        width: 220px;
+
+    }
+}
+
+@media screen and (max-width:1000px){
+    .logoInnova{
+        margin-left: 640px;
+    }
+}
+
+@media screen and (max-width:970px){
+    .logoInnova{
+        margin-left: 620px;
+    }
+}
+@media screen and (max-width:940px){
+    .logoInnova{
+        margin-left: 600px;
+    }
+}
+
+@media screen and (max-width:930px){
+    .logoInnova{
+        margin-left: 580px;
+    }
+    .logoInnova img{
+        width: 200px;
+        margin-top:15px;
+    }
+}
+
+@media screen and (max-width:890px){
+    .logoInnova{
+        margin-left: 520px;
+    }
+    .logoInnova img{
+        width: 200px;
+        margin-top:15px;
+    }
+}
+
+@media screen and (max-width:835px){
+    .logoInnova{
+        margin-left: 480px;
+    }
+    .logoInnova img{
+        width: 200px;
+        margin-top:15px;
+    }
+}
+@media screen and (max-width:790px){
+    .logoInnova{
+        margin-left: 440px;
+    }
+    .logoInnova img{
+        width: 200px;
+        margin-top:15px;
+    }
+}
+
+@media screen and (max-width:750px){
+    .logoInnova{
+        margin-left: 400px;
+    }
+    .logoInnova img{
+        width: 200px;
+        margin-top:15px;
+    }
+}
+
+@media screen and (max-width:710px){
+    .logoInnova{
+        margin-left: 380px;
+    }
+    .logoInnova img{
+        width: 170px;
+        margin-top:20px;
+    }
+}
+
+@media screen and (max-width:660px){
+    .logoInnova{
+        margin-left: 360px;
+    }
+    .logoInnova img{
+        width: 170px;
+        margin-top:20px;
+    }
+}
+
+@media screen and (max-width:640px){
+    .logoInnova{
+        margin-left: 330px;
+    }
+    .logoInnova img{
+        width: 170px;
+        margin-top:20px;
+    }
+}
+
+@media screen and (max-width:610px){
+    .logoInnova{
+        margin-left: 320px;
+    }
+    .logoInnova img{
+        width: 140px;
+        margin-top:30px;
+    }
+}
+
+@media screen and (max-width:570px){
+    .logoInnova{
+        margin-left: 290px;
+    }
+    .logoInnova img{
+        width: 140px;
+        margin-top:30px;
+    }
+}
+
+@media screen and (max-width:540px){
+    .logoInnova{
+        margin-left: 300px;
+    }
+    .logoInnova img{
+        width: 110px;
+        margin-top:40px;
+    }
+}
+
+@media screen and (max-width:520px){
+    .logoInnova{
+        margin-left:350px;
+    }
+}
+
+@media screen and (max-width:463px){
+    .logoInnova{
+        margin-left:300px;
+    }
+}
+
+@media screen and (max-width:410px){
+    .logoInnova{
+        margin-left:280px;
+    }
+}
+
+@media screen and (max-width:390px){
+    .logoInnova{
+        margin-left:265px;
+    }
+}
+
+@media screen and (max-width:375px){
+    .logoInnova{
+        margin-left:255px;
+    }
+    .logoInnova img{
+        margin-top: 50px;
+    }
+}
+
+
+/* 
+@media screen and (max-width:521px){
+    .logoInnova{
+        margin-left: 280px;
+    }
+    .logoInnova img{
+        width: 110px;
+        margin-top:40px;
+    }
+}
+
+@media screen and (max-width:50px){
+    .logoInnova{
+        margin-left: 300px;
+    }
+    .logoInnova img{
+        width: 110px;
+        margin-top:40px;
+    }
+} */
+
+
+/* 
+@media screen and (max-width:1000px){
+    .logoInnova{
+        margin-left:600px;
+    }
+}
+
+@media screen and (max-width:900px){
+    .logoInnova{
+        margin-left:500px;
+    }
+    .logoInnova img{
+        width:200px;
+        margin-top:40px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .logoInnova{
+        margin-left:400px;
+    }
+}
+
+@media screen and (max-width:710px){
+    .logoInnova{
+        margin-left:350px;
+    }
+}
+
+@media screen and (max-width:650px){
+    .logoInnova{
+        margin-left:300px;
+    }
+}
+
+@media screen and (max-width:610px){
+    .logoInnova{
+        margin-left:290px;
+    }
+    .logoInnova img{
+        margin-top:45px;
+    }
+}
+
+@media screen and (max-width:590px){
+    .logoInnova{
+        margin-left:285px;
+    }
+    .logoInnova img{
+        width:150px;
+        margin-top:70px;
+    }
+}
+@media screen and (max-width:540px){
+    .logoInnova{
+        margin-left:265px;
+    }
+    .logoInnova img{
+        width:150px;
+        margin-top:70px;
+    }
+}
+
+@media screen and (max-width:520px){
+    .logoInnova{
+        margin-left:340px;
+    }
+    .logoInnova img{
+        width:140px;
+        margin-top:80px;
+    }
+}
+
+@media screen and (max-width:480px){
+    .logoInnova{
+        margin-left:310px;
+    }
+}
+
+@media screen and (max-width:440px){
+    .logoInnova{
+        margin-left:270px;
+    }
+}
+
+@media screen and (max-width:400px){
+    .logoInnova{
+        margin-left:240px;
+    }
+}
+
+@media screen and (max-width:380px){
+    .logoInnova{
+        margin-left:250px;
+       
+    }
+    .logoInnova img{
+        width:100px;
+        margin-top:110px;
+
+    }
+} */
+
+@media screen and (min-width:768px){
+    #title{
+        width:450px;
+    }
+}
