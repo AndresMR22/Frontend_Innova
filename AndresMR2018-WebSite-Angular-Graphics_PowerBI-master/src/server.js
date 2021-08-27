@@ -7,3 +7,5 @@ app.use(express.static(__dirname+'/dist/my-dream-app'));
 app.get('/',function(req,res){
 res.sendFile(path.join(__dirname+'/dist/my-dream-app/index.html'));
 });
+
+app.listen(process.env.PORT || 5000);

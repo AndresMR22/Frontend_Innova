@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceEnlaceService {
-
   urlEnlace = "https://innovabackend.herokuapp.com/enlace";
   urlEnlaceByReporte = "https://innovabackend.herokuapp.com/enlace/reporte-enlace"
 
