@@ -32,9 +32,8 @@ constructor(private httpClient: HttpClient) { }
     .map(res=>res)
   }
 
-  updateContacto(newContacto:Contacto){
-    return this.httpClient.put(`${this.urlContacto}/update/${newContacto.idcontacto}`,newContacto)
-    .map(res=>res)
-  }
+ updateContacto(contact : Contacto):Observable<Contacto>{
+   return this.httpClient.put<Contacto>(this.urlContacto+"/update",contact)
+ }
  
 }

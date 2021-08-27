@@ -18,6 +18,7 @@ export class ListarProyectoComponent implements OnInit {
     titulo:'',
     objetivogeneral:'',
     resumen:'',
+    palabrasclave:'',
     autor:'',
   }
 
@@ -65,6 +66,9 @@ this.servicePro.updateProyecto(this.proyectoSelected).subscribe(res=>{
 
   showObjetivoGeneral(proSelect:IProyecto){
     this.proyectoSelected.objetivogeneral = proSelect.objetivogeneral
+  }
+  showPalabras(proSelect:IProyecto){
+    this.proyectoSelected.palabrasclave = proSelect.palabrasclave
   }
 
 

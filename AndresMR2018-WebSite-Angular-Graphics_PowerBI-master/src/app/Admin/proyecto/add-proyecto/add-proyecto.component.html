@@ -4,13 +4,16 @@
         <h3>Agregar proyecto</h3>
         <form (submit)="addProyecto($event)">
           <div class="form-group">
-              <input type="text" [(ngModel)]="titulo" name="titulopublicacion" class="form-control" placeholder="Ingresar el título de la publicación">
-            </div>
+            <textarea   [(ngModel)]="titulo"  name="titulopublicacion" class="form-control" id="textAreaExample1" rows="2" placeholder="Ingrese aquí el titulo para el proyec"></textarea>
+          </div>
             <div class="form-group">
               <textarea   [(ngModel)]="objetivogeneral"  name="objetivogeneral" class="form-control" id="textAreaExample1" rows="3" placeholder="Ingrese aquí el objetivo general del proyecto"></textarea>
             </div>
             <div class="form-group">
               <textarea   [(ngModel)]="resumen"  name="resumen" class="form-control" id="textAreaExample1" rows="4" placeholder="Ingrese aquí un resumen del proyecto"></textarea>
+            </div>
+            <div class="form-group">
+              <textarea   [(ngModel)]="palabrasclave"  name="palabrasclave" class="form-control" id="textAreaExample1" rows="2" placeholder="Ingrese aquí las palabras clave del proyecto"></textarea>
             </div>
             <div class="form-group">
               <input type="text" [(ngModel)]="autor" name="autor" class="form-control" placeholder="Ingresar el nombre del autor">

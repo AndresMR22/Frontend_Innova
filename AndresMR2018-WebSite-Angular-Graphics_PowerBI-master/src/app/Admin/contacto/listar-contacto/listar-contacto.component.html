@@ -27,7 +27,7 @@
                     <td colspan>{{contacto.nombreContacto}}</td>
                     <td colspan>{{contacto.telefonoContacto}}</td>
                     <td colspan>{{contacto.correoContacto}}</td>
-                    <td colspan><img src="{{contacto.fotocontacto}}"></td>
+                    <td colspan><a class="btn btn-secondary" (click)="triggerModal(modalData2)" (click)="ShowImagen(contacto)"><i class="fa fa-image"></i></a></td>
                     <td>
                         <a class="btn btn-warning col-sm-9 my-1" (click)="triggerModal(modalData)" (click)="showContacto(contacto)" ><i class="fa fa-edit"></i></a>
                         <br>
@@ -72,6 +72,28 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-success"(click)="modificarContacto(contactoSelected)" (click)="modal.close('Save click')">Guardar</button>
     <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cancelar</button>
+</div>
+</ng-template>
+
+
+
+<ng-template #modalData2 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title2">Imagen del contacto</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #grupoForm="ngForm" >
+      <div class="form-group">
+        <label for="my-input">Imagen del contacto</label>
+        <img name="fotoproducto" src="{{fotoContacto.fotocontacto}}">
+      </div>
+  </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
 </div>
 </ng-template>
     

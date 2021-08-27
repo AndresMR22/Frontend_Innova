@@ -45,6 +45,10 @@ closeModal?: string;
   this.fotoCarrusel.foto = car.foto;
   }
 
+  showImagenTable(car:Carrusel){
+    this.fotoCarrusel.foto = car.foto;
+    }
+
   showDescripcion(carruselSelect:Carrusel){
     this.carruselSelected.descripcion = carruselSelect.descripcion
   }

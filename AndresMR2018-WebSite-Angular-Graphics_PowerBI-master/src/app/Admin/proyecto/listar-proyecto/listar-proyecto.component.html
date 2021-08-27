@@ -8,7 +8,6 @@
         <div class="botones">
           <button class="btn btn-success my-3"><a routerLink="../agregar-proyecto">Agregar proyecto</a></button>
           <button class="btn btn-primary my-3 mx-1" *ngIf="proyectos.length>0"><a routerLink="../agregar-objetivo">Agregar objetivo específico</a></button>
-          <button class="btn btn-info my-3" *ngIf="proyectos.length>0"><a routerLink="../agregar-palabra">Agregar palabra clave</a></button>
         </div>
         <div class="row">
             <table class="table">
@@ -18,6 +17,7 @@
                     <th scope="col">Título de proyecto</th>
                     <th scope="col">Objetivo general</th>
                     <th scope="col">Resumen</th>
+                    <th scope = "col">Palabras clave</th>
                     <th scope="col" class="col_autor">Autor</th>
                     <th scope="col" class="col_fecha">Fecha</th>
                     <th scope ="col">Acciones</th>
@@ -30,6 +30,7 @@
                     <td colspan><a class="btn btn-secondary" (click)="triggerModal(modalData3)" (click)="showObjetivoGeneral(proy)"><i class="fa fa-eye"></i></a></td>
                    
                     <td colspan><a class="btn btn-secondary" (click)="triggerModal(modalData2)" (click)="showResumen(proy)"><i class="fa fa-eye"></i></a></td>
+                    <td colspan><a class="btn btn-secondary" (click)="triggerModal(modalData4)" (click)="showPalabras(proy)"><i class="fa fa-eye"></i></a></td>
                    
                     <td colspan class="col_autor">{{proy.autor}}</td>
                     <td colspan class="col_fecha">{{proy.fecha}}</td>
@@ -102,7 +103,8 @@
       <div class="form-group">
         <label for="my-input"></label>
         <textarea   [(ngModel)]="proyectoSelected.resumen"  name="resumenproyecto" class="form-control" id="textAreaExample1" rows="4"></textarea>
-    </div>
+   
+      </div>
   </form>
   </div>
   <div class="modal-footer">
@@ -123,6 +125,27 @@
       <div class="form-group">
         <label for="my-input"></label>
         <textarea   [(ngModel)]="proyectoSelected.objetivogeneral"  name="objetivogeneral" class="form-control" id="textAreaExample1" rows="4"></textarea>
+    </div>
+  </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
+</div>
+</ng-template>
+
+
+<ng-template #modalData4 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Palabras clave del proyecto</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #grupoForm="ngForm">
+      <div class="form-group">
+        <label for="my-input"></label>
+        <textarea   [(ngModel)]="proyectoSelected.palabrasclave"  name="palabrasclave" class="form-control" id="textAreaExample1" rows="3"></textarea>
     </div>
   </form>
   </div>

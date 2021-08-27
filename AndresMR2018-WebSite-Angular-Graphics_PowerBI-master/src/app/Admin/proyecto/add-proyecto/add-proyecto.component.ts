@@ -18,6 +18,7 @@ export class AddProyectoComponent implements OnInit {
     resumen?:string;
     autor?:string;
     fecha?:string;
+    palabrasclave?:string;
 
   ngOnInit(): void {
   }
@@ -29,7 +30,8 @@ export class AddProyectoComponent implements OnInit {
       objetivogeneral : this.objetivogeneral,
       resumen : this.resumen,
       autor: this.autor,
-      fecha : this.fecha
+      fecha : this.fecha,
+      palabrasclave: this.palabrasclave
     }
 
     this.servicePro.postProyecto(pro).subscribe(data=>{
@@ -51,7 +53,8 @@ export class AddProyectoComponent implements OnInit {
     this.autor = '',
     this.fecha='',
     this.resumen= '',
-    this.objetivogeneral=''
+    this.objetivogeneral='',
+    this.palabrasclave=''
   }
 
 

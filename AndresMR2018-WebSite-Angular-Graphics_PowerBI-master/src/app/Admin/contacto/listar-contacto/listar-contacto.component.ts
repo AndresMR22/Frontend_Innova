@@ -40,6 +40,9 @@ closeModal?:string;
     this.contactoSelected=contact;
     this.fotoContacto.fotocontacto = contact.fotocontacto;
   }
+  ShowImagen(contact:Contacto){
+    this.fotoContacto.fotocontacto = contact.fotocontacto
+  }
 
   onFileChanges(files:any){
     this.contactoSelected.fotocontacto = files[0].base64;

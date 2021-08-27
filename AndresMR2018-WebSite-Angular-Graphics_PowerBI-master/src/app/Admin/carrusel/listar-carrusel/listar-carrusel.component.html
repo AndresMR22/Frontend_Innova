@@ -22,8 +22,8 @@
                 <tbody> 
                   <tr *ngFor="let c of carruseles; let i = index"> 
                    <td>{{i+1}}</td>
-                   <td colspan><a class="btn btn-secondary" (click)="triggerModal(modalData2)" (click)="showDescripcion(c)"><i class="fa fa-eye"></i></a></td>
-                    <td colspan><img src="{{c.foto}}"></td>
+                   <td colspan><a class="btn btn-info" (click)="triggerModal(modalData2)" (click)="showDescripcion(c)"><i class="fa fa-eye"></i></a></td>
+                   <td colspan><a class="btn btn-secondary" (click)="triggerModal(modalData3)" (click)="showImagenTable(c)"><i class="fa fa-image"></i></a></td>
                     <td>
                         <a class="btn btn-warning col-sm-9 my-1" (click)="triggerModal(modalData)" (click)="showImagen(c)" ><i class="fa fa-edit"></i></a>
                         <br>
@@ -79,9 +79,30 @@
   <div class="modal-body">
     <form #grupoForm="ngForm" >
       <div class="form-group">
-          <label for="my-input"></label>
-          <img name="fotogrupo" src="{{carruselSelected.descripcion}}"> 
+        <textarea   [(ngModel)]="carruselSelected.descripcion"  name="descripcion" class="form-control" id="textAreaExample1" rows="2"></textarea>
+   
         </div>
+  </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
+</div>
+</ng-template>
+
+
+<ng-template #modalData3 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title2">Imagen del carrusel</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #grupoForm="ngForm" >
+      <div class="form-group">
+        <label for="my-input">Imagen del carrusel</label>
+        <img name="fotoproducto" src="{{fotoCarrusel.foto}}">
+      </div>
   </form>
   </div>
   <div class="modal-footer">

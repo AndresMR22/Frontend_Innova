@@ -56,8 +56,6 @@ import {AddPublicacionComponent} from './Admin/publicacion/add-publicacion/add-p
 import {ListarPublicacionComponent} from './Admin/publicacion/listar-publicacion/listar-publicacion.component';
 import { AddProyectoComponent } from './Admin/proyecto/add-proyecto/add-proyecto.component';
 import { ListarProyectoComponent } from './Admin/proyecto/listar-proyecto/listar-proyecto.component';
-import { AddPalabraclaveComponent } from './Admin/palabraclave/add-palabraclave/add-palabraclave.component';
-import { ListarPalabraclaveComponent } from './Admin/palabraclave/listar-palabraclave/listar-palabraclave.component';
 import { AddContactoComponent } from './Admin/contacto/add-contacto/add-contacto.component';
 import { ListarContactoComponent } from './Admin/contacto/listar-contacto/listar-contacto.component';
 import { AddImagenComponent } from './Admin/galeria/add-imagen/add-imagen.component';
@@ -100,9 +98,6 @@ const routes: Routes = [
 
     {path:'dashboard/agregar-objetivo',component:AddobjetivoComponent},
     {path:'dashboard/listar-objetivos',component:ListarobjetivoComponent},
-
-    {path:'dashboard/agregar-palabra',component:AddPalabraclaveComponent},
-    {path:'dashboard/listar-palabras',component:ListarPalabraclaveComponent},
 
     {path:'dashboard/agregar-galeria',component:AddImagenComponent},
     {path:'dashboard/listar-galerias',component:ListarImagenesComponent},
@@ -185,8 +180,6 @@ const routes: Routes = [
     ListarPublicacionComponent,
     AddProyectoComponent,
     ListarProyectoComponent,
-    AddPalabraclaveComponent,
-    ListarPalabraclaveComponent,
     AddContactoComponent,
     ListarContactoComponent,
     AddImagenComponent,

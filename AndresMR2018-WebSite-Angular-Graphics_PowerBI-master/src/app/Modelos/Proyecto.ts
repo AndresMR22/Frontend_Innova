@@ -1,5 +1,4 @@
 import {IObjetivoEspecifico} from "../Modelos/Objetivo"
-import { IPalabraClave } from "./PalabraClave";
 
 export interface IProyecto{
     idproyecto?: number;
@@ -9,7 +8,7 @@ export interface IProyecto{
     autor?:string;
     fecha?:string;
     objetivosespecificos?:IObjetivoEspecifico[];
-    palabrasclave?:IPalabraClave[];
+    palabrasclave?:string;
 }
 
 // export class Proyecto implements IProyecto{

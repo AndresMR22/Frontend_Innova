@@ -50,6 +50,7 @@ this.proyectos = dataproyectos;
         icon:'success',
         iconColor:'#373737'
       })
+      this.nombreobjetivo=''
     },err=>{
       Swal.fire({
         titleText:'No se pudo agregar el objetivo al proyecto',

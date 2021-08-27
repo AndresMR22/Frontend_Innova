@@ -34,10 +34,10 @@
                       <div class="resumen">
                         <p style="font-weight: bold;">Resumen:{{proyecto.resumen}} </p>
                       </div>
-                      <div *ngIf="proyecto.palabrasclave?.length !=0">
+                      <div>
                         <p style="font-weight: bold;">Palabras clave</p>
-                      <div *ngFor="let pc of proyecto.palabrasclave">
-                      <li class="palabraclave"> {{pc?.palabraClave}}</li>
+                      <div >
+                      <li class="palabraclave"> {{proyecto.palabrasclave}}</li>
                       </div>
                     </div>
                        <div class="autor">
